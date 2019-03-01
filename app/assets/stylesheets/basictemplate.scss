@@ -9,6 +9,8 @@ body {
   justify-content: center;
   --main-nav-color: darkred;
   --secondary-nav-color: tan;
+  flex-direction: column;
+  align-items: center;
 } 
 
 .text_link:hover {
@@ -27,7 +29,7 @@ body {
   padding: 15px;
   font-size: 1.1em;
   border-right: solid white 1px;
-  width: 100px;
+  width: 10%;
   text-align: center;
 }
 
@@ -42,8 +44,9 @@ body {
   text-decoration: none;
   padding: 15px;
   font-size: 1.1em;
-  width: 100px;
+  width: 100%;
   text-align: center;
+  border-right: solid white 1px;
 }
 
 .form_input {
@@ -65,6 +68,18 @@ body {
   color: white;
   background-color: var(--main-nav-color);
   border-color: var(--main-nav-color);
+}
+
+#lists-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.list {
+border: solid red 1px;
+width: 200px;
 }
 
 input[type=number] {

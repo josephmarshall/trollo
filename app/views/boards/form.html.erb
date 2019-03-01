@@ -1,0 +1,8 @@
+<h1><%= @board.name ? "Edit " : "New " %>Board</h1>
+<div class="form_input"><%= form_with(model: @board, local: true) do |f| %><?div>
+<div class="form_input_label"><%= f.label :name %></div>
+<div class="form_input"><%= f.text_field :name %></div>
+<div class="form_input"><%= f.submit %></div>
+<% end %>
+</hr>
+

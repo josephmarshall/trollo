@@ -1,0 +1,22 @@
+<div style="width: 100vw">
+  <div class="navbar">
+    <div class="nav-item" style="width: 15%">
+      <h1 style="color: white; margin: 0; padding: 0;">Trollo</h1>
+    </div>
+    <% @boards.each do |board| %>
+    <a><%= link_to board.name, board_path(board), class: "nav-item" %></a>
+    <% end %>
+    <a><%= link_to "+", new_board_path, class: 'nav-item' %></a>
+    <a class="nav-item-empty"></a>
+    <div class="nav-item" id="user-sign-in" >
+      <% if user_signed_in? %>
+        <%= link_to current_user.email, edit_user_registration_path %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %>
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

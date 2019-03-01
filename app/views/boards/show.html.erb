@@ -1,0 +1,10 @@
+<h1><%= @board.name %> Board</h1>
+<p>Find me in app/views/boards/show.html.erb</p>
+<%= button_to "Edit Board Name", edit_board_path(@board), method: :get %>
+<%= button_to "Delete Board", board_path(@board), method: :delete, data: {confirm: "sure?"} %>
+<% @lists.each do |l| %>
+<%= "#{l.priority}. #{l.name}" %>
+<% end %>
+<hr />
+<%= link_to "create new list", new_board_list_path(@board) %>
+<%= render "/lists/index" %>

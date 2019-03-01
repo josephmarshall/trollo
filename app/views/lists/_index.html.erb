@@ -1,0 +1,18 @@
+
+<div id="lists-container">
+  <% @lists.each do |l| %>
+    <div class="list">
+    <h2><%= "#{l.priority}. #{l.name}" %>
+    <a><%= link_to 'edit', edit_board_list_path(@board, l)%></a>
+    <a><%= link_to 'x', board_list_path(@board, l), method: :delete %></a>
+    </h2>
+    <% l.tasks.each do |task| %>
+      <div style="border: solid green 2px; width: 200px;">
+      <h3><%= task.name %></h3>
+      <h5><%= task.description %></h5>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+</div>
+
