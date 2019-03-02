@@ -1,6 +1,6 @@
 <div style="width: 100vw">
   <div class="navbar">
-    <div class="nav-item" style="width: 15%">
+    <div class="nav-item" style="width: 25%">
       <h1 style="color: white; margin: 0; padding: 0;">Trollo</h1>
     </div>
     <% @boards.each do |board| %>
@@ -10,8 +10,8 @@
     <a class="nav-item-empty"></a>
     <div class="nav-item" id="user-sign-in" >
       <% if user_signed_in? %>
-        <%= link_to current_user.email, edit_user_registration_path %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <%= link_to current_user.email, edit_user_registration_path, class: "user-links" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "user-links" %>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path %>
         <%= link_to "Login", new_user_session_path %>

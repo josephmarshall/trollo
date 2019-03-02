@@ -6,4 +6,5 @@ class ApplicationController < ActionController::Base
   @boards = current_user ? current_user.boards : []
   end
 
+
 end

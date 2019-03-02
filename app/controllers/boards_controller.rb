@@ -4,7 +4,10 @@ before_action :set_lists
 before_action :set_tasks
 
   def index
-    @boards = current_user.boards
+    @boards = Board.all_boards(current_user.id)
+    if @boards.first != nil
+      redirect_to board_path(@boards.first)
+    end
   end
 
   def new
@@ -27,7 +30,7 @@ before_action :set_tasks
 
   def update
     if @board.update(board_params)
-    redirect_to boards_path
+    redirect_to board_path(@board)
     else
     render "form"
     end
@@ -48,11 +51,13 @@ before_action :set_tasks
     end
 
     def set_board
-      @board = current_user.boards.find(params[:id])
+      #@board = current_user.boards.find(params[:id])
+      @board = Board.find_board(current_user.id, params[:id])
     end
 
     def set_lists
       @lists = @board ? @board.lists : []
+      @lists = @lists.sort_by { |l| l.priority }
     end
 
     def set_tasks

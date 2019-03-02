@@ -1,8 +1,10 @@
 <h1><%= @board.name ? "Edit " : "New " %>Board</h1>
+<br />
+<br />
 <div class="form_input"><%= form_with(model: @board, local: true) do |f| %><?div>
-<div class="form_input_label"><%= f.label :name %></div>
-<div class="form_input"><%= f.text_field :name %></div>
-<div class="form_input"><%= f.submit %></div>
+<div class="form_input"><%= f.text_field :name, autofocus: true, style: "text-align: center; width: 300px; font-size: 2em; font-style: bold;" %></div>
+<br />
+<div class="form_input" style="text-align: center;"><%= f.submit %></div>
 <% end %>
 </hr>
 

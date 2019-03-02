@@ -1,0 +1,9 @@
+<h1><%= @task.name ? "Edit " : "New " %>Task</h1>
+<br >
+  <%= form_with(model: [@list, @task], local: true, style: "margin: auto") do |f| %>
+    <div class="form_input" style="text-align: center;"><%= f.text_field :name, autofocus: true, style: "text-align: center; font-style: bold" %></div>
+    <div><%= f.text_area :description, id: "task-text-area" %> </div>
+    <br />
+    <div class="form_input" style="text-align: center"><%= f.submit %></div>
+<% end %>
+</hr>

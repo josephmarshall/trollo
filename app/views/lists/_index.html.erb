@@ -2,14 +2,19 @@
 <div id="lists-container">
   <% @lists.each do |l| %>
     <div class="list">
-    <h2><%= "#{l.priority}. #{l.name}" %>
-    <a><%= link_to 'edit', edit_board_list_path(@board, l)%></a>
-    <a><%= link_to 'x', board_list_path(@board, l), method: :delete %></a>
+    <h2 style="text-align: center"><%= link_to "#{l.name}", edit_board_list_path(@board, l), class: "text_link" %>
+    <a><%= link_to image_tag("trashcan.png", alt: "x", class: "trashcan", style: "height: 15px"), board_list_path(@board, l), method: :delete, class: "text_link", title: "Delete" %></a>
+    <h4 style="margin-block-start: 0em; margin-block-end: 0em;"><%= button_to 'Create New Task', new_list_task_path(l), method: :get, style: "width:200px; border-radius: 5px; border-width: 3px;" %></h4>
     </h2>
     <% l.tasks.each do |task| %>
-      <div style="border: solid green 2px; width: 200px;">
-      <h3><%= task.name %></h3>
-      <h5><%= task.description %></h5>
+      <div id="task-card">
+        <div>
+          <h3 style="margin-block-start: 0; margin-block-end: 0;">
+            <%= link_to task.name, edit_list_task_path(l, task), class: "text_link" %>
+            <%= link_to image_tag("trashcan.png", alt: "x", class: "trashcan", style: "height: 12px"), list_task_path(l, task), method: :delete, class: "text_link", title: "Delete" %>
+          </h3>
+        </div>
+      <h5><%= link_to task.description, edit_list_task_path(l, task), class: "text_link" %></h5>
       </div>
     <% end %>
     </div>

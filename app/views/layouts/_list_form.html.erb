@@ -1,9 +1,8 @@
 <h1><%= @list.name ? "Edit " : "New " %>List</h1>
 <div class="form_input"><%= form_with(model: [@board, @list], local: true) do |f| %><?div>
-<div class="form_input_label"><%= f.label :name %></div>
-<div class="form_input"><%= f.text_field :name %></div>
-<div class="form_input_label"><%= f.label :priority %></div>
-<div class="form_input"><%= f.text_field :priority %></div>
-<div class="form_input"><%= f.submit %></div>
+<br />
+<div class="form_input" style="text-align: center;"><%= f.text_field :name, autofocus: true, style: "text-align: center; font-size: 1.5em;" %></div>
+<div class="form_input_label" style="text-align: center"><%= f.label :priority %></div>
+<div class="form_input" style="text-align: center;"><%= f.text_field :priority, style: "text-align: center; width: 20%"  %></div>
+<div class="form_input" style="text-align: center;"><%= f.submit %></div>
 <% end %>
-</hr>

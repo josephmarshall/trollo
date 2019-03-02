@@ -1,6 +1,6 @@
-tasks
-<%= ".....#{@lists}....."%>
-<% @tasks.each do |t| %>
-<%= t.name %>
-<%= t.description %>
-  <% end %>
+<% @list.tasks.each do |task| %>
+  <div style="border: solid green 2px; width: 200px;">
+  <h3><%= task.name %></h3>
+  <h5><%= task.description %></h5>
+  </div>
+<% end %>
