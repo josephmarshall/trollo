@@ -1,9 +1,11 @@
-<div id="board-title-container">
-  <h1>
-    <%= link_to "#{@board.name}", edit_board_path(@board), method: :get, class: "text_link", style: "font-size: 2em; font-style: bold;" %></a>
-    <%= link_to image_tag("trashcan.png", alt: "x", class: "trashcan"), board_path(@board), method: :delete, data: {confirm: "Delete Entire Board?"}, class: "text_link", title: "Delete" %>
-  </h1>
+<div id="board-container">
+  <div id="board-title-container">
+    <h1>
+      <%= link_to "#{@board.name}", edit_board_path(@board), method: :get, class: "text_link", style: "font-size: 2em; font-style: bold;" %></a>
+      <%= link_to image_tag("trashcan.png", alt: "x", class: "trashcan"), board_path(@board), method: :delete, data: {confirm: "Delete Entire Board?"}, class: "text_link", title: "Delete" %>
+    </h1>
+  </div>
+  <br />
+  <%= button_to "New List", new_board_list_path(@board), method: :get, style: "border-radius: 5px; border-width: 3px; background-image: linear-gradient(to top left, rgb(66, 66, 66),rgba(228, 228, 228, 0.726));" %>
+  <%= render "/lists/index" %>
 </div>
-<hr />
-<%= button_to "Create New list", new_board_list_path(@board), method: :get, style: "border-radius: 5px; border-width: 3px;" %>
-<%= render "/lists/index" %>

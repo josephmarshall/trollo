@@ -57,6 +57,10 @@ before_action :set_tasks
 
     def set_lists
       @lists = @board ? @board.lists : []
+      @lists = @lists.each { |l| 
+        if l.priority == nil
+        l.priority = 0
+        end }
       @lists = @lists.sort_by { |l| l.priority }
     end
 
