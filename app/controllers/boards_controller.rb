@@ -37,6 +37,8 @@ before_action :set_tasks
   end
 
   def show
+    @focus_list = Board.select_focus_point_New_List
+    @focus_task = Board.select_focus_point_New_Task
   end
 
   def destroy
