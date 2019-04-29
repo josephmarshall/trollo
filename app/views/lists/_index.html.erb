@@ -4,7 +4,7 @@
     <div class="list">
     <h2 style="text-align: center"><%= link_to "#{l.name}", edit_board_list_path(@board, l), class: "text_link" %>
     <a><%= link_to image_tag("trashcan.png", alt: "x", class: "trashcan", style: "height: 15px"), board_list_path(@board, l), method: :delete, class: "text_link", title: "Delete" %></a>
-    <h4 style="margin-block-start: 0em; margin-block-end: 0em;"><%= button_to 'New Task', new_list_task_path(l), method: :get, style: "width:200px; border-radius: 5px; border-width: 3px;" %></h4>
+    <h4 style="margin-block-start: 0em; margin-block-end: 0em;"><%= button_to 'New Task', new_list_task_path(l), method: :get, style: "width:200px; border-radius: 5px; border-width: 3px; background-color: white;" %></h4>
     </h2>
     <% l.tasks.each do |task| %>
       <div id="task-card">
