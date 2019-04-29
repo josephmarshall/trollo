@@ -1,8 +1,7 @@
 Rails.application.configure do
 
-  config.action_dispatch.default_headers = {
-    'X-Frame-Options' => 'ALLOWALL'
-}
+  config.action_dispatch.default_headers['X-Frame-Options'] = "ALLOWALL"
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
