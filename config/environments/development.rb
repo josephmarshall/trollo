@@ -1,6 +1,5 @@
 Rails.application.configure do
 
-  config.action_dispatch.default_headers['X-Frame-Options'] = ""
 
   # Settings specified here will take precedence over those in config/application.rb.
 
